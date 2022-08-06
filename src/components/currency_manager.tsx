@@ -188,11 +188,9 @@ function RemoveCurrencyComponent(){
 
     function RemoveCurrency(e: React.ChangeEvent<HTMLSelectElement>){
         const currencyName = e.target.value;
-        if(currencyName != ""){
-            const foundItem = currencies.find((item) => {return item.name == currencyName});
-            
-            if(foundItem?.main){
-                setRemoveError("You cannot delete the main currency");
+        if(currencyName != ""){    
+            if(currencies.length == 1){
+                setRemoveError("You cannot delete the last currency");
                 return;
             }
             else{
