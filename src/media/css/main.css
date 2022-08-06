@@ -1,0 +1,171 @@
+body{
+    margin: 0;
+    font-family: system-ui;
+}
+.error-message{
+    color: red;
+    max-width: 200px;
+}
+body header{
+    width: 100%;
+    display: flex;
+    min-height: 40px;
+    background: #303030;
+    margin-bottom: 25px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    color: white;
+}
+
+input, select, button{
+    margin: 0 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    outline: none;
+}
+button{
+    background: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+header .main_currency{
+    margin: 10px;
+}
+
+header .main_currency span{
+    margin: 1.5px;
+}
+
+.currency-converter{
+    margin: 0 auto;
+    width: 280px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.convert-from, .convert-to{
+    width: fit-content;
+    margin: 5px auto;
+}
+
+.currency-manager{
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 10px #8080806e;
+    border-radius: 5px 0px 0px 0px;
+    min-height: 265px;
+    min-width: 200px;
+    transition: all 0.3s;
+}
+.currency-manager__mode-block{
+    position: absolute;
+    bottom: 5px;
+}
+.currency-manager__toggle-button{
+    z-index: 9;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 35px;
+    height: 35px;
+    background: white;
+    position: fixed;
+    right: 7px;
+    bottom: 7px;
+    box-shadow: 0px 0px 5px grey;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.currency-manager__toggle-button img{
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+}
+@keyframes modal_success {
+    0%{
+        z-index: 2;
+        opacity: 2;
+        transform: translateX(100%);
+    }
+    15%{
+        transform: translateX(0%);
+    }
+    80%{
+        opacity: 0.5;
+    }
+    90%{
+        opacity: 0.1;
+    }
+    100%{
+        z-index: -1;
+        opacity: 0;
+        transform: translateX(0%);
+    }
+}
+.currency-manager__add-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transition: all 0.3s;
+    opacity: 1;
+    z-index: 1;
+    transform: translateX(100%);
+}
+.currency-manager__modal_open{
+    animation: 2s ease-in modal_success;
+}
+.currency-manager__add-modal img{
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 75px;
+}
+.currency-manager__remove-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transition: all 0.3s;
+    opacity: 1;
+    z-index: 1;
+    transform: translateX(100%);
+}
+.remove-modal__buttons{
+    display: flex !important;
+    justify-content: center;
+}
+.currency-manager__remove-select{
+    margin: 50% auto 0;
+    transform: translateY(-50%);
+}
+.currency-manager div{
+    text-align: center;
+    padding: 5px;
+}
+.currency-manager div > *{
+    display: block;
+}
+.currency-manager_open{
+    transform: translate(0, 0);
+}
+
+.currency-manager_close{
+    transform: translate(0, 100%);
+}
