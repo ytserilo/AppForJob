@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    // куда собираем
     "outDir": "./build/",
     
     "noImplicitAny": false,
